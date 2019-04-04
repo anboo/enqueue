@@ -52,7 +52,7 @@ final class BuildTopicSubscriberRoutesPass implements CompilerPassInterface
                     }
 
                     /** @var TopicSubscriberInterface $processorClass */
-                    $topics = $processorClass::getSubscribedTopics();
+                    $topics = $topics = $container->get($serviceId)->getSubscribedTopics();
 
                     if (empty($topics)) {
                         throw new \LogicException('Topic subscriber must return something.');
